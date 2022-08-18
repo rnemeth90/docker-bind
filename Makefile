@@ -1,6 +1,6 @@
-MAINTAINER=labbsr0x
-PROJECT=dns-bind9
-VERSION=9.11.3
+MAINTAINER=rnemeth90
+PROJECT=docker-bind
+VERSION=1.0.0
 
 
 all: build
@@ -11,7 +11,7 @@ build:
 
 push:
 	@docker push ${MAINTAINER}/${PROJECT}:${VERSION}
-	@docker push ${MAINTAINER}/${PROJECT}:latest 
+	@docker push ${MAINTAINER}/${PROJECT}:latest
 
 docker-run-primary:
 	@docker run --rm --name bind -d --publish 53:53/tcp --publish 53:53/udp --volume ${PWD}/example/primary:/data ${MAINTAINER}/${PROJECT}

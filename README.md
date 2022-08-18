@@ -307,4 +307,4 @@ ns2.newdomain.com.
 
 # References
 
-https://github.com/rnemeth90/docker-bind#labbsr0xdocker-dns-bind9
+https://github.com/sameersbn/docker-bind
