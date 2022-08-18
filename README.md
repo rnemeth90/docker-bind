@@ -46,16 +46,16 @@ If the above recommendations do not help then [report your issue](../../issues/n
 
 ## Installation
 
-Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/rnemeth90/docker-bind) and is the recommended method of installation.
+Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/ryannemeth/docker-bind) and is the recommended method of installation.
 
 ```bash
-docker pull rnemeth90/docker-bind
+docker pull ryannemeth/docker-bind
 ```
 
 Alternatively you can build the image yourself.
 
 ```bash
-docker build -t rnemeth90/docker-bind github.com/rnemeth90/docker-bind
+docker build -t ryannemeth/docker-bind github.com/rnemeth90/docker-bind
 ```
 
 or
@@ -69,7 +69,7 @@ make build
 Start BIND using:
 
 ```bash
-docker run --rm --name bind -d --publish 53:53/tcp --publish 53:53/udp --volume ${PWD}/.bind9:/data rnemeth90/docker-bind
+docker run --rm --name bind -d --publish 53:53/tcp --publish 53:53/udp --volume ${PWD}/.bind9:/data ryannemeth/docker-bind
 ```
 
 or
@@ -99,7 +99,7 @@ To upgrade to newer releases:
   1. Download the updated Docker image:
 
   ```bash
-  docker pull rnemeth90/docker-bind
+  docker pull ryannemeth/docker-bind
   ```
 
   2. Stop the currently running image:
@@ -131,7 +131,7 @@ To upgrade to newer releases:
   ```bash
   docker run -name bind -d \
     [OPTIONS] \
-    rnemeth90/docker-bind
+    ryannemeth/docker-bind
   ```
 
 ## Shell Access
@@ -247,7 +247,7 @@ docker-compose up -d
 Clone github project on ns2 server
 
 ```bash
-git clone https://github.com/rnemeth90/docker-bind.git
+git clone https://github.com/ryannemeth/docker-bind.git
 ```
 
 Create a directory that will be used as DNS volume

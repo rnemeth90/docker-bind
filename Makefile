@@ -1,4 +1,4 @@
-MAINTAINER=rnemeth90
+MAINTAINER=ryannemeth
 PROJECT=docker-bind
 VERSION=1.0.0
 
