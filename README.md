@@ -1,6 +1,6 @@
-# labbsr0x/docker-dns-bind9
+# rnemeth90/docker-docker-bind
 
-- [labbsr0x/docker-dns-bind9](#labbsr0xdocker-dns-bind9)
+- [rnemeth90/docker-docker-bind](#rnemeth90docker-docker-bind)
 - [Introduction](#introduction)
   - [Contributing](#contributing)
   - [Issues](#issues)
@@ -16,7 +16,6 @@
     - [Primary DNS](#primary-dns)
     - [Secondary DNS](#secondary-dns)
     - [Testing new DNS Server](#testing-new-dns-server)
-  - [Others](#others)
 - [References](#references)
 
 # Introduction
@@ -47,19 +46,19 @@ If the above recommendations do not help then [report your issue](../../issues/n
 
 ## Installation
 
-Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/labbsr0x/dns-bind9) and is the recommended method of installation.
+Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/rnemeth90/docker-bind) and is the recommended method of installation.
 
 ```bash
-docker pull labbsr0x/dns-bind9
+docker pull rnemeth90/docker-bind
 ```
 
 Alternatively you can build the image yourself.
 
 ```bash
-docker build -t labbsr0x/dns-bind9 github.com/labbsr0x/docker-dns-bind9
+docker build -t rnemeth90/docker-bind github.com/rnemeth90/docker-docker-bind
 ```
 
-or 
+or
 
 ```bash
 make build
@@ -70,7 +69,7 @@ make build
 Start BIND using:
 
 ```bash
-docker run --rm --name bind -d --publish 53:53/tcp --publish 53:53/udp --volume ${PWD}/.bind9:/data labbsr0x/dns-bind9
+docker run --rm --name bind -d --publish 53:53/tcp --publish 53:53/udp --volume ${PWD}/.bind9:/data rnemeth90/docker-bind
 ```
 
 or
@@ -100,7 +99,7 @@ To upgrade to newer releases:
   1. Download the updated Docker image:
 
   ```bash
-  docker pull labbsr0x/dns-bind9
+  docker pull rnemeth90/docker-bind
   ```
 
   2. Stop the currently running image:
@@ -109,7 +108,7 @@ To upgrade to newer releases:
   docker stop bind
   ```
 
-  or 
+  or
 
   ```bash
   make docker-stop
@@ -132,7 +131,7 @@ To upgrade to newer releases:
   ```bash
   docker run -name bind -d \
     [OPTIONS] \
-    labbsr0x/dns-bind9
+    rnemeth90/docker-bind
   ```
 
 ## Shell Access
@@ -143,7 +142,7 @@ For debugging and maintenance purposes you may want access the containers shell.
 docker exec -it bind bash
 ```
 
-# Example 
+# Example
 
 ## Prerequisites
 - Two servers that will be our DNS name servers with the following features installed. Referred as **ns1** and **ns2**.
@@ -151,7 +150,7 @@ docker exec -it bind bash
   - docker-compose
   - git
 - **newdomain.com** domain as an example.
-  
+
 |Servers  |Description           |	Example FQDN       | Example IP    |
 |:-------:|:---------------------|:--------------------|:-------------:|
 |ns1      |Primary DNS server    |ns1.newdomain.com    |10.0.10.1      |
@@ -162,7 +161,7 @@ docker exec -it bind bash
 Clone github project on ns1 server
 
 ```bash
-git clone https://github.com/labbsr0x/docker-dns-bind9.git
+git clone https://github.com/rnemeth90/docker-docker-bind.git
 ```
 
 Create a directory that will be used as DNS volume
@@ -174,9 +173,9 @@ mkdir /opt/bind9
 Copy **primary DNS directory** and **docker-compose file**
 
 ```bash
-cp -r /opt/docker-dns-bind9/example/primary /opt/bind9/.
+cp -r /opt/docker-docker-bind/example/primary /opt/bind9/.
 
-cp /opt/docker-dns-bind9/docker-compose.yml /opt/bind9/.
+cp /opt/docker-docker-bind/docker-compose.yml /opt/bind9/.
 ```
 
 Set volume path in **docker-compose.yml**
@@ -248,7 +247,7 @@ docker-compose up -d
 Clone github project on ns2 server
 
 ```bash
-git clone https://github.com/labbsr0x/docker-dns-bind9.git
+git clone https://github.com/rnemeth90/docker-docker-bind.git
 ```
 
 Create a directory that will be used as DNS volume
@@ -260,9 +259,9 @@ mkdir /opt/bind9
 Copy **secondary DNS directory** and **docker-compose file**
 
 ```bash
-cp -r /opt/docker-dns-bind9/example/secondary /opt/bind9/.
+cp -r /opt/docker-docker-bind/example/secondary /opt/bind9/.
 
-cp /opt/docker-dns-bind9/docker-compose.yml /opt/bind9/.
+cp /opt/docker-docker-bind/docker-compose.yml /opt/bind9/.
 ```
 
 Set volume path in **docker-compose.yml**
@@ -306,18 +305,6 @@ ns1.newdomain.com.
 ns2.newdomain.com.
 ```
 
-## Others
-
-`
-Example in Portuguese (pt_BR) on fabiotavarespr.dev's blog
-`
-- [Como configurar um DNS Bind9 com docker](https://fabiotavarespr.dev/posts/configurar-dns-bind9-com-docker/)
-
 # References
 
-References used in these projects
-
-[github.com/sameersbn/docker-bind](https://github.com/sameersbn/docker-bind)
-
-[Deploying a DNS Server using Docker](http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/)
-
+https://github.com/rnemeth90/docker-bind#labbsr0xdocker-dns-bind9
