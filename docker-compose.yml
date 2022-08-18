@@ -4,7 +4,7 @@ version: '3.5'
 services:
   bind9:
     restart: always
-    image: labbsr0x/dns-bind9
+    image: rnemeth90/docker-bind
     ports:
     - "53:53/udp"
     - "53:53/tcp"
