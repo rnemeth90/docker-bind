@@ -1,6 +1,6 @@
-# rnemeth90/docker-docker-bind
+# rnemeth90/docker-bind
 
-- [rnemeth90/docker-docker-bind](#rnemeth90docker-docker-bind)
+- [rnemeth90/docker-bind](#rnemeth90docker-bind)
 - [Introduction](#introduction)
   - [Contributing](#contributing)
   - [Issues](#issues)
@@ -55,7 +55,7 @@ docker pull rnemeth90/docker-bind
 Alternatively you can build the image yourself.
 
 ```bash
-docker build -t rnemeth90/docker-bind github.com/rnemeth90/docker-docker-bind
+docker build -t rnemeth90/docker-bind github.com/rnemeth90/docker-bind
 ```
 
 or
@@ -161,7 +161,7 @@ docker exec -it bind bash
 Clone github project on ns1 server
 
 ```bash
-git clone https://github.com/rnemeth90/docker-docker-bind.git
+git clone https://github.com/rnemeth90/docker-bind.git
 ```
 
 Create a directory that will be used as DNS volume
@@ -173,9 +173,9 @@ mkdir /opt/bind9
 Copy **primary DNS directory** and **docker-compose file**
 
 ```bash
-cp -r /opt/docker-docker-bind/example/primary /opt/bind9/.
+cp -r /opt/docker-bind/example/primary /opt/bind9/.
 
-cp /opt/docker-docker-bind/docker-compose.yml /opt/bind9/.
+cp /opt/docker-bind/docker-compose.yml /opt/bind9/.
 ```
 
 Set volume path in **docker-compose.yml**
@@ -247,7 +247,7 @@ docker-compose up -d
 Clone github project on ns2 server
 
 ```bash
-git clone https://github.com/rnemeth90/docker-docker-bind.git
+git clone https://github.com/rnemeth90/docker-bind.git
 ```
 
 Create a directory that will be used as DNS volume
@@ -259,9 +259,9 @@ mkdir /opt/bind9
 Copy **secondary DNS directory** and **docker-compose file**
 
 ```bash
-cp -r /opt/docker-docker-bind/example/secondary /opt/bind9/.
+cp -r /opt/docker-bind/example/secondary /opt/bind9/.
 
-cp /opt/docker-docker-bind/docker-compose.yml /opt/bind9/.
+cp /opt/docker-bind/docker-compose.yml /opt/bind9/.
 ```
 
 Set volume path in **docker-compose.yml**
