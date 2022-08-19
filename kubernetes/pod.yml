@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: bind9
-      image: rnemeth90/docker-bind
+      image: ryannemeth/docker-bind
       ports:
         - containerPort: 53
           protocol: UDP

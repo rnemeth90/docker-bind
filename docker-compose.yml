@@ -4,7 +4,7 @@ version: '3.5'
 services:
   bind9:
     restart: always
-    image: rnemeth90/docker-bind
+    image: ryannemeth/docker-bind
     ports:
     - "53:53/udp"
     - "53:53/tcp"
