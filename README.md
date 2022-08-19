@@ -82,7 +82,7 @@ make docker-run
 
 ## Persistence
 
-For the BIND to preserve its state across container shutdown and startup you should mount a volume at `/data`.
+For BIND to preserve its state across container shutdown and startup you should mount a volume at `/data`.
 
 > *The [Quickstart](#quickstart) command already mounts a volume for persistence.*
 
